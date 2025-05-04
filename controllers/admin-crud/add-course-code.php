@@ -1,5 +1,5 @@
 <?php
-$title = 'Add Course'; // Set the page title
+$title = 'Thêm khóa học'; // Set the page title
 session_start(); // Start the session to manage session data
 
 // Include the configuration file and start output buffering
