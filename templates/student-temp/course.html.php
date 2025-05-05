@@ -19,7 +19,7 @@
                             <thead>
                                 <tr>
                                     <th> <?= htmlspecialchars('ID') ?> </th>
-                                    <th> <?= htmlspecialchars('Course') ?> </th>
+                                    <th> <?= htmlspecialchars('Môn học') ?> </th>
                                 </tr>
                             </thead>
 

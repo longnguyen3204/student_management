@@ -1,5 +1,5 @@
 <?php
-$title = 'Delete Course'; // Title of the page
+$title = 'Xóa môn học'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include the configuration settings
@@ -14,7 +14,7 @@ if(isset($_POST['btn_delete_course'])){
     $run = deleteCourse($pdo, $_POST['id']);
     
     if($run) {
-        $_SESSION['status'] = 'Xóa môn học thành côngcông!'; // Success message
+        $_SESSION['status'] = 'Xóa môn học thành công!'; // Success message
         header('location: course-manage-code.php'); // Redirect to course management page
         exit(); // Exit the script
     } else {

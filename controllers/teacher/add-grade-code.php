@@ -1,5 +1,5 @@
 <?php
-$title = 'Add Course'; // Set the page title
+$title = 'Thêm điểm'; // Set the page title
 session_start(); // Start the session to manage session data
 
 // Include the configuration file and start output buffering
@@ -20,20 +20,20 @@ if(isset($_POST['btn_add_grade'])){
     } elseif (!is_numeric($_POST['grade']) || $_POST['grade'] <= 0 || $_POST['grade'] >= 10) {
         $_SESSION['status'] = 'Điểm phải là số lớn hơn 0 và nhỏ hơn 10!';
     } else {
-        // Add the new course to the database
+        // Add the new grade to the database
         $run = addGrade($pdo, $_POST['grade'],$_POST['student_name'], $_POST['course_name']);
 
         if($run){
-            $_SESSION['status'] = 'Thêm điểm thành công!'; // Set a success message if the course is added
-            header('location: grade-manage-code.php'); // Redirect to the course management page
+            $_SESSION['status'] = 'Thêm điểm thành công!'; // Set a success message if the grade is added
+            header('location: grade-manage-code.php'); // Redirect to the grade management page
             exit(); // Stop further code execution
         } else{
-            $_SESSION['status'] = 'Thêm điểm không thành công!'; // Set a failure message if the course could not be added
+            $_SESSION['status'] = 'Thêm điểm không thành công!'; // Set a failure message if the grade could not be added
         }
     }
 }
 
-// Include the course-add template to display the form
+// Include the grade-add template to display the form
 include BASE_PATH . '/templates/admin-temp/grade-add.html.php';
 $output = ob_get_clean(); // Capture the output of the template
 

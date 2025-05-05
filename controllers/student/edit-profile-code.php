@@ -1,5 +1,5 @@
 <?php
-$title = 'Edit Profile'; // Title of the page
+$title = 'Chỉnh sửa thông tin cá nhân'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include configuration settings
@@ -13,14 +13,14 @@ $account = getAccountbyID($pdo, $_GET['id']);
 
 if(isset($_POST['btn_edit_profile'])){
 
-    // Validate that the new grade name is not empty
+    // Validate that the new profile is not empty
     if (empty(trim($_POST['new_name'])) || (empty(trim($_POST['new_email'])) || (empty(trim($_POST['new_gender'])) || (empty(trim($_POST['new_phone'])))))) {
-        $_SESSION['status'] = 'All fields are mandatory!'; // Set error message if fields are empty
-        header('location: edit-profile-code.php?id=' . $account['id']); // Redirect back to the grade management page
+        $_SESSION['status'] = 'Các trường là bắt buộc!'; // Set error message if fields are empty
+        header('location: edit-profile-code.php?id=' . $account['id']); // Redirect back to the profile edit page
         exit(); // Exit the script
     
     }elseif (strlen(trim($_POST['new_phone'])) != 10) {
-        $_SESSION['status'] = 'Số điện thoại phải có 10 kí tự.'; // Set error message if fields are empty
+        $_SESSION['status'] = 'Số điện thoại phải có 10 kí tự.'; // Set error message if phone number is invalid
         header('location: edit-profile-code.php?id=' . $account['id']);
         exit();
     } else {
@@ -28,7 +28,7 @@ if(isset($_POST['btn_edit_profile'])){
         $check_email = checkMail($pdo, $_POST['new_email'], $_GET['id']);
         if ($check_email > 0) {
             $_SESSION['status'] = 'Email đã tồn tại!'; // Set error message if email already exists
-            header('location: edit-profile-code.php?id=' . $account['id']); // Redirect back to the user management page
+            header('location: edit-profile-code.php?id=' . $account['id']); // Redirect back to the profile edit page
             exit(); // Exit the script
         } else {
             // Proceed to update the user account in the database
@@ -36,7 +36,7 @@ if(isset($_POST['btn_edit_profile'])){
             
             if($run) {
                 $_SESSION['status'] = 'Thay đổi tài khoản thành công!'; // Success message
-                header('location: profile-code.php'); // Redirect to the user management page
+                header('location: profile-code.php'); // Redirect to the profile page
                 exit(); // Exit the script
             } else {
                 $_SESSION['status'] = 'Bạn cần phải chỉnh sửa!'; // Error message
@@ -47,8 +47,8 @@ if(isset($_POST['btn_edit_profile'])){
         }
     }
 
-// Include the course edit form template
+// Include the profile edit form template
 include BASE_PATH . '/templates/student-temp/profile-edit.html.php';
 $output = ob_get_clean(); // Get the buffered content
-include BASE_PATH . '/templates/student-layout.html.php'; // Include the admin layout template
+include BASE_PATH . '/templates/student-layout.html.php'; // Include the student layout template
 ?>

@@ -39,10 +39,10 @@ if(isset($_POST['btn_sign_in'])){
             }
             exit(); // Exit after redirect
         } else {
-            $_SESSION['status'] = 'Invalid email or password!'; // Invalid credentials
+            $_SESSION['status'] = 'Sai email hoặc mật khẩu!'; // Invalid credentials
         }
     } else {
-        $_SESSION['status'] = 'All fields are mandatory!'; // Missing input
+        $_SESSION['status'] = 'Các trường là bắt buộc!'; // Missing input
     }
 }
 

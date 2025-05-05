@@ -1,5 +1,5 @@
 <?php
-$title = 'Course Management'; // Set the page title
+$title = 'Quản lý môn học'; // Set the page title
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include the configuration file

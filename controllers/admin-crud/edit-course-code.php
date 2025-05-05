@@ -1,5 +1,5 @@
 <?php
-$title = 'Edit Course'; // Title of the page
+$title = 'Chỉnh sửa môn học'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include configuration settings

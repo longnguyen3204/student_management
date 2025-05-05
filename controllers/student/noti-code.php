@@ -1,5 +1,5 @@
 <?php
-$title = 'Public Notification'; // Title of the page
+$title = 'Thông báo'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include the config file for global settings
@@ -7,7 +7,7 @@ include dirname(__DIR__, 2) . '/includes/config.php'; // Include the config file
 include BASE_PATH . '/includes/DatabaseConnection.php'; // Include database connection
 include BASE_PATH . '/includes/DatabaseFunction.php'; // Include database functions
 
-if(!isset($_SESSION['authenticated'])){ // Check if user is logged in
+if(!isset($_SESSION['authenticated'])){ // Check if student is logged in
     $_SESSION['status'] = 'Sinh viên phải đăng nhập để xem thông báo!';
     header('Location: ../../index.php'); // Redirect if not logged in
     exit(0);
@@ -18,7 +18,7 @@ $notifications = allNotification($pdo);
 // Start output buffering to capture the page content
 ob_start();
 
-// Include the template for displaying the notifications in the admin layout
+// Include the template for displaying the notifications in the student layout
 include BASE_PATH . '/templates/student-temp/notifications.html.php';
 
 // Capture the output and store it in the `$output` variable

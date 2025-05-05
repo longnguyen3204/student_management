@@ -30,6 +30,7 @@ function updatePassword($pdo, $email, $password) { // Function to update the pas
     $query = query($pdo,'UPDATE accounts SET password_hash = :password_hash WHERE email = :email LIMIT 1', $parameters);
     return $query->rowCount() > 0;  // Return true if the password was updated
 }   
+
 function addStudent($pdo, $username, $email, $password) { // Function to add a new account to the database
     $password_hash = password_hash($password, PASSWORD_DEFAULT); // Hash the password
 
@@ -63,7 +64,6 @@ function updateAccount($pdo, $accountid, $username, $email, $gender, $phone) { /
     $query = query($pdo,'UPDATE accounts SET username = :username, email = :email, gender = :gender, phone = :phone WHERE id = :id', $parameters);
     return $query->rowCount() > 0; // Return true if the account was updated
 }
-
 
 
 function deleteAccount($pdo, $accountid){ // Function to delete an account by account ID

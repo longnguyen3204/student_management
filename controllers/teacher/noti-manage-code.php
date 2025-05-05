@@ -1,5 +1,5 @@
 <?php
-$title = 'Public Notification'; // Title of the page
+$title = 'Quản lý thông báo'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include the config file for global settings
@@ -13,7 +13,7 @@ $notifications = allNotification($pdo);
 // Start output buffering to capture the page content
 ob_start();
 
-// Include the template for displaying the notifications in the admin layout
+// Include the template for displaying the notifications in the teacher layout
 include BASE_PATH . '/templates/admin-temp/notification-manage.html.php';
 
 // Capture the output and store it in the `$output` variable

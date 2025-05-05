@@ -1,5 +1,5 @@
 <?php
-$title = 'Add Notification'; // Set page title
+$title = 'Thêm thông báo'; // Set page title
 session_start(); // Start session
 
 if(!isset($_SESSION['authenticated'])){ // Check login

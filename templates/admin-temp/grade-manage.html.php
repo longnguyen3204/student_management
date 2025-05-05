@@ -34,7 +34,6 @@
                             <tbody class="table-group-divider">
                             <?php foreach ($grades as $grade):?>
                                 <tr>
-                                
                                     <td> <?= htmlspecialchars($grade['id']) ?> </td>
                                     <td> <?= htmlspecialchars($grade['grade']) ?> </td>
                                     <td> <?= htmlspecialchars($grade['username']) ?> </td>
@@ -48,7 +47,6 @@
                                             <button type="submit" name="btn_delete_grade" class="btn btn-danger btn-sm">Xóa</button> <!-- delete user button -->
                                         </form>
                                     </td>
-                                
                                 </tr>
                             <?php endforeach;?>
                             </tbody>

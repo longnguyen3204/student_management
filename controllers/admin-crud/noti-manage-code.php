@@ -1,5 +1,5 @@
 <?php
-$title = 'Public Notification'; // Title of the page
+$title = 'Quản lý thông báo'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include the config file for global settings

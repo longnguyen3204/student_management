@@ -1,5 +1,5 @@
 <?php
-$title = 'Delete Notification'; // Set page title
+$title = 'Xóa thông báo'; // Set page title
 session_start(); // Start session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Load config

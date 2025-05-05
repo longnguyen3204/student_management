@@ -1,5 +1,5 @@
 <?php
-$title = 'Edit Course'; // Title of the page
+$title = 'Chỉnh sửa điểm'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include configuration settings
@@ -41,8 +41,8 @@ if(isset($_POST['btn_edit_grade'])){
     
 
 
-// Include the course edit form template
+// Include the grade edit form template
 include BASE_PATH . '/templates/admin-temp/grade-edit.html.php';
 $output = ob_get_clean(); // Get the buffered content
-include BASE_PATH . '/templates/teacher-layout.html.php'; // Include the admin layout template
+include BASE_PATH . '/templates/teacher-layout.html.php'; // Include the teacher layout template
 ?>

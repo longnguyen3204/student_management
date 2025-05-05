@@ -1,5 +1,5 @@
 <?php
-$title = 'Edit Course'; // Title of the page
+$title = 'Chỉnh sửa điểm'; // Title of the page
 session_start(); // Start the session
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include configuration settings
@@ -15,7 +15,7 @@ $courses = allCourse($pdo);
 
 if(isset($_POST['btn_edit_grade'])){
 
-    // Validate that the new grade name is not empty
+    // Validate that the new grade is not empty
     if (empty(trim($_POST['new_grade']))) {
         $_SESSION['status'] = 'Các trường là bắt buộc!'; // Set error message if fields are empty
         header('location: grade-manage-code.php'); // Redirect back to the grade management page

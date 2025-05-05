@@ -19,8 +19,8 @@
                             <thead>
                                 <tr> 
                                     <th> <?= htmlspecialchars('ID') ?> </th>
-                                    <th> <?= htmlspecialchars('Grade') ?> </th>
-                                    <th> <?= htmlspecialchars('Course Name') ?> </th>
+                                    <th> <?= htmlspecialchars('Điểm') ?> </th>
+                                    <th> <?= htmlspecialchars('Tên môn') ?> </th>
                                 </tr>
                             </thead>
 

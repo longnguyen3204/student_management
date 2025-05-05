@@ -2,6 +2,12 @@
 $title = 'Thêm khóa học'; // Set the page title
 session_start(); // Start the session to manage session data
 
+if(!isset($_SESSION['authenticated'])){ // Check login
+    $_SESSION['status'] = 'Bạn cần đăng nhập để thêm môn học!';
+    header('Location: ../auth/signin-code.php');
+    exit(0);
+}
+
 // Include the configuration file and start output buffering
 include dirname(__DIR__, 2) . '/includes/config.php';
 ob_start(); // Start output buffering

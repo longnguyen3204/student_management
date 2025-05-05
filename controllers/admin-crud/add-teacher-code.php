@@ -1,12 +1,12 @@
 <?php
-$title = 'Add User'; // Set the page title
+$title = 'Thêm giảng viên'; // Set the page title
 session_start(); // Start the session to manage session data
 
 // Include the configuration file and start output buffering
 include dirname(__DIR__, 2) . '/includes/config.php';
 ob_start(); // Start output buffering
 
-// Check if the form is submitted to add a user
+// Check if the form is submitted to add a teacher
 if(isset($_POST['btn_add_teacher'])){
     // Include the necessary database connection and functions
     include BASE_PATH . '/includes/DatabaseConnection.php';
@@ -34,21 +34,21 @@ if(isset($_POST['btn_add_teacher'])){
         if ($check_email > 0) {
             $_SESSION['status'] = 'Email đẫ tồn tại!'; // If email already exists, set a session message
         } else{
-            // Add the new account to the database
+            // Add the new teacher account to the database
             $run = addTeacher($pdo, $username, $email, $password);
 
             if($run){
-                $_SESSION['status'] = 'Thêm tài khoản thành công!'; // Set a success message if the user is added
-                header('location: teacher-manage-code.php'); // Redirect to the user management page
+                $_SESSION['status'] = 'Thêm tài khoản thành công!'; // Set a success message if the account is added
+                header('location: teacher-manage-code.php'); // Redirect to the teacher management page
                 exit(); // Stop further code execution
             } else{
-                $_SESSION['status'] = 'Thêm tài khoản không thành công!'; // Set a failure message if the user could not be added
+                $_SESSION['status'] = 'Thêm tài khoản không thành công!'; // Set a failure message if the account could not be added
             }
         } 
     }
 }
 
-// Include the user-add template to display the form
+// Include the teacher-add template to display the form
 include BASE_PATH . '/templates/admin-temp/teacher-add.html.php';
 $output = ob_get_clean(); // Capture the output of the template
 

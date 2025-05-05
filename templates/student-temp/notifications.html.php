@@ -18,9 +18,9 @@
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr> 
-                                    <th> <?= htmlspecialchars('Title') ?> </th>
-                                    <th> <?= htmlspecialchars('Post by') ?> </th>
-                                    <th> <?= htmlspecialchars('Time') ?> </th>
+                                    <th> <?= htmlspecialchars('Tiêu đề') ?> </th>
+                                    <th> <?= htmlspecialchars('Đăng bởi') ?> </th>
+                                    <th> <?= htmlspecialchars('Thời gian') ?> </th>
                                 </tr>
                             </thead>
 

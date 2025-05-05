@@ -15,9 +15,6 @@
                     }
                 ?>
                 <div class="card shadow">
-                    <div class="card-header">
-                        <h5>Add Course</h5>
-                    </div>
                     <div class="card-body">
                         <form action="" method="post"> <!-- add course form -->
                             <div class="form-group mb-3">

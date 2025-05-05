@@ -1,5 +1,5 @@
 <?php
-$title = 'Public Notification'; // Title of the page
+$title = 'Thông báo'; // Title of the page
 session_start();
 
 include dirname(__DIR__, 2) . '/includes/config.php'; // Include the config file for global settings
@@ -7,7 +7,7 @@ include dirname(__DIR__, 2) . '/includes/config.php'; // Include the config file
 include BASE_PATH . '/includes/DatabaseConnection.php'; // Include database connection
 include BASE_PATH . '/includes/DatabaseFunction.php'; // Include database functions
 
-if(!isset($_SESSION['authenticated'])){ // Check if user is logged in
+if(!isset($_SESSION['authenticated'])){ // Check if student is logged in
     $_SESSION['status'] = 'Sinh viên phải đăng nhập để xem thông báo!';
     header('Location: ../../index.php'); // Redirect if not logged in
     exit(0);
